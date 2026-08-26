@@ -46,7 +46,7 @@
         <span>|</span>
         <span>Call: <a href="tel:07716751909" class="underline hover:text-white transition-colors">07716751909</a></span>
         <span>|</span>
-        <span>Email: <a href="mailto:flatpackphil87@gmail.com" class="underline hover:text-white transition-colors">flatpackphil87@gmail.com</a></span>
+        <span>Email: <a href="mailto:jackscully2012@hotmail.com" class="underline hover:text-white transition-colors">jackscully2012@hotmail.com</a></span>
     </div>
 
     <!-- Header / Navbar -->
@@ -99,7 +99,7 @@
                             <span>Get a Quick Quote</span>
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                        <a href="mailto:flatpackphil87@gmail.com" class="border border-neutral-700 hover:border-brandOrange text-white font-semibold px-6 py-3.5 rounded-xl text-center transition-all flex items-center justify-center space-x-2">
+                        <a href="mailto:jackscully2012@hotmail.com" class="border border-neutral-700 hover:border-brandOrange text-white font-semibold px-6 py-3.5 rounded-xl text-center transition-all flex items-center justify-center space-x-2">
                             <i class="fa-solid fa-envelope text-brandOrange"></i>
                             <span>Email Phil</span>
                         </a>
@@ -118,7 +118,7 @@
                                 <div class="text-brandOrange text-5xl mb-1"><i class="fa-solid fa-house-chimney"></i></div>
                                 <h3 class="text-2xl font-black tracking-wider text-brandOrange">FLATPACK PHIL</h3>
                                 <p class="text-lg font-bold tracking-widest text-white">07716751909</p>
-                                <p class="text-xs text-brandOrange font-medium">flatpackphil87@gmail.com</p>
+                                <p class="text-xs text-brandOrange font-medium">jackscully2012@hotmail.com</p>
                                 <hr class="w-16 border-brandOrange my-1">
                                 <ul class="text-xs text-neutral-300 space-y-1 text-left inline-block">
                                     <li><i class="fa-solid fa-check text-brandOrange mr-2"></i> Flat Pack Assembly</li>
@@ -397,7 +397,7 @@
         <div class="bg-brandCard border border-neutral-800 rounded-3xl p-6 md:p-10 shadow-2xl">
             <div class="text-center mb-8">
                 <h2 class="text-2xl md:text-3xl font-extrabold mb-2">Request a Quote or Service</h2>
-                <p class="text-neutral-400 text-sm">Drop your details below or email us directly at <a href="mailto:flatpackphil87@gmail.com" class="text-brandOrange underline">flatpackphil87@gmail.com</a>.</p>
+                <p class="text-neutral-400 text-sm">Drop your details below or email us directly at <a href="mailto:jackscully2012@hotmail.com" class="text-brandOrange underline">jackscully2012@hotmail.com</a>.</p>
             </div>
 
             <!-- FORM CONNECTED TO FORMSPREE -->
@@ -456,7 +456,7 @@
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 text-brandOrange font-semibold">
                 <a href="tel:07716751909" class="underline">Call: 07716751909</a>
                 <span class="hidden sm:inline">|</span>
-                <a href="mailto:flatpackphil87@gmail.com" class="underline">Email: flatpackphil87@gmail.com</a>
+                <a href="mailto:jackscully2012@hotmail.com" class="underline">Email: jackscully2012@hotmail.com</a>
             </div>
             <div class="pt-4 border-t border-neutral-900 text-xs">
                 &copy; 2026 Flatpack Phil. All rights reserved. 🏡🧰⚒️🚛 😎
@@ -480,6 +480,16 @@
                 <div>
                     <label class="block text-xs font-bold uppercase text-neutral-300 mb-2">Your Name</label>
                     <input type="text" id="reviewName" name="reviewer_name" required placeholder="e.g. Sarah Jenkins" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandOrange">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-neutral-300 mb-2">Rating</label>
+                    <select id="reviewRating" name="rating" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandOrange">
+                        <option value="5">⭐⭐⭐⭐⭐ (5 Stars)</option>
+                        <option value="4">⭐⭐⭐⭐ (4 Stars)</option>
+                        <option value="3">⭐⭐⭐ (3 Stars)</option>
+                        <option value="2">⭐⭐ (2 Stars)</option>
+                        <option value="1">⭐ (1 Star)</option>
+                    </select>
                 </div>
                 <div>
                     <label class="block text-xs font-bold uppercase text-neutral-300 mb-2">Your Review</label>
@@ -512,6 +522,7 @@
 
             const name = document.getElementById('reviewName').value;
             const text = document.getElementById('reviewText').value;
+            const ratingCount = parseInt(document.getElementById('reviewRating').value) || 5;
 
             // Optional: submit quietly to Formspree in the background so you get the email
             const formData = new FormData(document.getElementById('dynamicReviewForm'));
@@ -524,10 +535,16 @@
             // Generate Initials (e.g. "Sarah Jenkins" -> "SJ")
             const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || "FP";
 
-            // Create the new card element matching your existing dark theme design
+            // Build exact star HTML string based on selected amount
+            let starsHtml = '';
+            for (let i = 0; i < ratingCount; i++) {
+                starsHtml += '<i class="fa-solid fa-star"></i>';
+            }
+
+            // Create the new card element matching your existing dark theme design (no flash)
             const container = document.getElementById('reviews-container');
             const newCard = document.createElement('div');
-            newCard.className = "bg-brandCard border border-neutral-800 rounded-2xl p-6 shadow-lg animate-pulse";
+            newCard.className = "bg-brandCard border border-neutral-800 rounded-2xl p-6 shadow-lg";
             newCard.innerHTML = `
                 <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center space-x-3">
@@ -540,7 +557,7 @@
                         </div>
                     </div>
                     <div class="text-brandOrange text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        ${starsHtml}
                     </div>
                 </div>
                 <p class="text-neutral-300 text-sm italic leading-relaxed">
