@@ -21,6 +21,8 @@
     </script>
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Lightbox CSS for image zoom -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 </head>
 <body class="bg-brandDark text-white font-sans antialiased selection:bg-brandOrange selection:text-black">
 
@@ -33,7 +35,6 @@
     <header class="sticky top-0 z-50 bg-brandDark/95 backdrop-blur border-b border-neutral-800">
         <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <!-- Logo Image Placeholder (Replace src with your logo.png) -->
                 <div class="w-10 h-10 rounded-lg bg-brandOrange flex items-center justify-center font-black text-black text-xl shadow-lg">
                     FP
                 </div>
@@ -45,6 +46,7 @@
             
             <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold">
                 <a href="#services" class="hover:text-brandOrange transition-colors">Services</a>
+                <a href="#gallery" class="hover:text-brandOrange transition-colors">Our Work</a>
                 <a href="#about" class="hover:text-brandOrange transition-colors">About</a>
                 <a href="#contact" class="hover:text-brandOrange transition-colors">Contact</a>
             </nav>
@@ -58,7 +60,7 @@
         </div>
     </header>
 
-    <!-- Hero Section with Banner -->
+    <!-- Hero Section -->
     <section class="relative bg-neutral-900 border-b border-neutral-800 py-12 md:py-20 overflow-hidden">
         <div class="max-w-5xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -88,13 +90,11 @@
                     </div>
                 </div>
 
-                <!-- Right Banner Image Showcase -->
+                <!-- Right Banner Showcase Card -->
                 <div class="relative">
                     <div class="absolute -inset-1 bg-gradient-to-r from-brandOrange to-yellow-600 rounded-2xl blur opacity-30"></div>
-                    <!-- Replace src with your banner.png file -->
                     <div class="relative bg-brandCard border border-neutral-800 rounded-2xl p-4 shadow-2xl overflow-hidden flex flex-col items-center justify-center">
                         <div class="w-full bg-neutral-950 rounded-xl border border-neutral-800 p-4 text-center">
-                            <!-- Visual representation of banner if image isn't loaded yet -->
                             <div class="py-12 px-4 flex flex-col items-center justify-center space-y-3">
                                 <div class="text-brandOrange text-5xl mb-2"><i class="fa-solid fa-house-chimney"></i></div>
                                 <h3 class="text-2xl font-black tracking-wider text-brandOrange">FLATPACK PHIL</h3>
@@ -181,8 +181,81 @@
         </div>
     </section>
 
+    <!-- Recent Work Gallery Section -->
+    <section id="gallery" class="py-16 bg-neutral-900/50 border-t border-b border-neutral-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brandOrange font-bold tracking-widest text-xs uppercase">Portfolio</span>
+                <h2 class="text-3xl font-extrabold mt-1 mb-3">Some of Our Recent Work</h2>
+                <p class="text-neutral-400 text-sm md:text-base">Take a look at completed projects ranging from custom sheds to wardrobes and TV setups.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Gallery Item 1: Shed -->
+                <div class="bg-brandCard border border-neutral-800 rounded-2xl overflow-hidden shadow-xl group">
+                    <div class="relative overflow-hidden aspect-video bg-neutral-950">
+                        <a href="image_774abd.png" data-lightbox="work-gallery" data-title="Shed & Outdoor Assembly by Flatpack Phil">
+                            <img src="image_774abd.png" alt="Shed Assembly" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="bg-brandOrange text-black font-bold px-4 py-2 rounded-lg text-xs flex items-center space-x-1 shadow-lg">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                    <span>Zoom Image</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs text-brandOrange font-bold uppercase tracking-wider">Outdoor Structure</span>
+                        <h3 class="text-lg font-bold mt-1 mb-2">Shed Installation</h3>
+                        <p class="text-neutral-400 text-sm">Sturdy, weather-proof outdoor shed completely assembled and anchored securely.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2: Wardrobe / Flat Pack -->
+                <div class="bg-brandCard border border-neutral-800 rounded-2xl overflow-hidden shadow-xl group">
+                    <div class="relative overflow-hidden aspect-video bg-neutral-950">
+                        <a href="image_774af4.png" data-lightbox="work-gallery" data-title="Wardrobe / Flat Pack Furniture Assembly">
+                            <img src="image_774af4.png" alt="Flat Pack Wardrobe Assembly" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="bg-brandOrange text-black font-bold px-4 py-2 rounded-lg text-xs flex items-center space-x-1 shadow-lg">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                    <span>Zoom Image</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs text-brandOrange font-bold uppercase tracking-wider">Indoor Furniture</span>
+                        <h3 class="text-lg font-bold mt-1 mb-2">Flat Pack Wardrobe Frame</h3>
+                        <p class="text-neutral-400 text-sm">Precision-built bedroom wardrobe system assembled neatly and level.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3: TV Mounting -->
+                <div class="bg-brandCard border border-neutral-800 rounded-2xl overflow-hidden shadow-xl group">
+                    <div class="relative overflow-hidden aspect-video bg-neutral-950">
+                        <a href="image_774de3.png" data-lightbox="work-gallery" data-title="TV Wall Mounting and Floating Shelf Installation">
+                            <img src="image_774de3.png" alt="TV Mounting & Floating Shelf" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="bg-brandOrange text-black font-bold px-4 py-2 rounded-lg text-xs flex items-center space-x-1 shadow-lg">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                    <span>Zoom Image</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs text-brandOrange font-bold uppercase tracking-wider">Wall Setup</span>
+                        <h3 class="text-lg font-bold mt-1 mb-2">TV Mounting & Shelving</h3>
+                        <p class="text-neutral-400 text-sm">Secure wall mounting paired with floating shelf and storage cube unit setup.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About / CTA Banner Section -->
-    <section id="about" class="py-16 bg-neutral-900 border-t border-b border-neutral-800">
+    <section id="about" class="py-16 bg-neutral-900 border-b border-neutral-800">
         <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
             <span class="text-brandOrange font-bold tracking-widest text-xs uppercase">Get in touch with Phil</span>
             <h2 class="text-2xl md:text-4xl font-extrabold leading-snug">
@@ -274,5 +347,7 @@
         </a>
     </div>
 
+    <!-- Lightbox JS for image zoom popup -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 </body>
 </html>
