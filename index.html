@@ -278,26 +278,27 @@
                 <p class="text-neutral-400 text-sm">Drop your details below and Phil will get right back to you.</p>
             </div>
 
-            <form action="#" method="POST" class="space-y-5">
+            <!-- FORM CONNECTED TO FORMSPREE (xeaqjalg -> blynxxy2012@gmail.com) -->
+            <form action="https://formspree.io/f/xeaqjalg" method="POST" enctype="multipart/form-data" class="space-y-5">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
                         <label class="block text-xs font-bold uppercase text-neutral-300 mb-2">Your Name</label>
-                        <input type="text" required placeholder="e.g. John Smith" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandOrange transition-colors">
+                        <input type="text" name="name" required placeholder="e.g. John Smith" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandOrange transition-colors">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase text-neutral-300 mb-2">Phone Number</label>
-                        <input type="tel" required placeholder="e.g. 07700 900000" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandOrange transition-colors">
+                        <input type="tel" name="phone" required placeholder="e.g. 07700 900000" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandOrange transition-colors">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
                         <label class="block text-xs font-bold uppercase text-neutral-300 mb-2">Postcode (Northwest)</label>
-                        <input type="text" required placeholder="e.g. M1 1AA" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandOrange transition-colors">
+                        <input type="text" name="postcode" required placeholder="e.g. M1 1AA" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandOrange transition-colors">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase text-neutral-300 mb-2">Service Needed</label>
-                        <select class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandOrange transition-colors">
+                        <select name="service" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandOrange transition-colors">
                             <option>Flat Pack Assembly</option>
                             <option>TV Mounting</option>
                             <option>Shed & Pergola Assembly</option>
@@ -309,15 +310,12 @@
 
                 <div>
                     <label class="block text-xs font-bold uppercase text-neutral-300 mb-2">Brief Description of Work</label>
-                    <textarea rows="4" placeholder="Tell us what items need building, collection details, etc." class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandOrange transition-colors"></textarea>
+                    <textarea name="message" rows="4" placeholder="Tell us what items need building, collection details, etc." class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brandOrange transition-colors"></textarea>
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold uppercase text-neutral-300 mb-2">Upload Pictures (Optional)</label>
-                    <div class="border-2 border-dashed border-neutral-700 hover:border-brandOrange rounded-xl p-6 text-center cursor-pointer bg-neutral-900 transition-colors">
-                        <i class="fa-solid fa-cloud-arrow-up text-brandOrange text-2xl mb-2"></i>
-                        <p class="text-xs text-neutral-400">Click to upload photos of items or space</p>
-                    </div>
+                    <input type="file" name="attachment" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-white text-sm file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brandOrange file:text-black hover:file:bg-orange-600 cursor-pointer">
                 </div>
 
                 <button type="submit" class="w-full bg-brandOrange hover:bg-orange-600 text-black font-extrabold py-4 rounded-xl text-base transition-all shadow-xl flex items-center justify-center space-x-2">
